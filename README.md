@@ -43,7 +43,8 @@ $ python manage.py runserver
 This should run the server and you may check the endpoints : [Endpoints](#available-end-points)  
 
 Create a super user to look into the data in admin panel imported into DB via csv
-# create superuser
+
+- create superuser
 ```
 $ python manage.py createsuperuser --email admin@example.com --username admin
                     
@@ -65,6 +66,15 @@ Install the docker and docker-cpmpose as per your OS
 docker-compose up
 ```
 
+- create superuser
+```
+get the container id from $ docker ps
+$ docker exec -it <container_id> python manage.py createsuperuser --email admin@example.com --username admin
+                    
+(Choose your own password)
+```
+
+
 # Available End Points 
 ```
 Need to Login for all end points with the super user credentials
@@ -77,9 +87,8 @@ Need to Login for all end points with the super user credentials
     - For all available images list  http://localhost:8000/api/images
     - For single image instance  http://localhost:8000/api/image/<pk>
     
-# Setup to read csv data as file up load or via link.
-- Option1 (only possible via virtual env with super user created as pre-requisite) : 
-       via file upload with django admin
+# Setup to read csv data as file upload or via link.
+- Option1: via file upload with django admin
     - go to admin panel of images http://localhost:8000/admin/api/image/
     - Login with your credentials
     - select *import* button on top right corner
@@ -94,20 +103,22 @@ Need to Login for all end points with the super user credentials
 - Option2: via CSV File Link.
     - go to the POST endpoint http://localhost:8000/api/upload-images/
     - Login with your credentials
-    - give *images_file_link* in and press the post.
+    - give *images_file_link* in and hit the POST button.
         ![upload_csv_link](demo_screens/upload_csv_link.jpg)
     - If CSV is valid you will get *success* response.
     - If CSV is invalid you will get *invalid csv* response.
     
     
-# Images-List API
+# GET Images Endpoint
 - go to the api http://localhost:8000/api/images/
+        ![images-list](demo_screens/images_list.jpg)
 - Login with your credentials
 - Hit the GET button, you will get all images information with pagination. 
 
-# Image instance API
+# GET Image details Endpoint
 - go to the api http://localhost:8000/api/image/<pk>
         - pk : image instance id
+        ![image-detail](demo_screens/image_details.jpg)
 - Login with your credentials
 - Hit the GET button, you will get required image details. 
 

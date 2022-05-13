@@ -13,7 +13,7 @@ import pandas as pd
 
 class UploadImagesView(CreateAPIView):
     serializer_class = ImageUploadSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -44,7 +44,7 @@ class ImagesView(ListModelMixin, GenericViewSet):
     """
     queryset = Image.objects.all().order_by('id')
     serializer_class = ImageSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class ImageView(RetrieveModelMixin, GenericViewSet):
@@ -53,7 +53,7 @@ class ImageView(RetrieveModelMixin, GenericViewSet):
     """
     queryset = Image.objects.all()
     serializer_class = ImageSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 
