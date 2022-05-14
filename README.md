@@ -2,7 +2,10 @@
 
 **Elements Assignment**
 
-# Setup with virtual environment (on Mac OS)
+# Setup 
+
+## Virtual Environment (on Mac OS)
+
 
 - Install PyEnv
 ```
@@ -54,7 +57,7 @@ $ python manage.py createsuperuser --email admin@example.com --username admin
 The other option ( in case if you work with windows or any other OS ,
 have docker installed in your system with below setup)
 
-# Docker SetUp
+## Docker SetUp
 
 - install docker -->  Ref: https://docs.docker.com/get-docker/
 ```
@@ -87,8 +90,8 @@ Need to Login for all end points with the super user credentials
     - For all available images list  http://localhost:8000/api/images
     - For single image instance  http://localhost:8000/api/image/<pk>
     
-# Setup to read csv data as file upload or via link.
-- Option1: via file upload with django admin
+## Setup to read csv data as file upload or via link.
+- ##### Option1: Via file upload with django admin
     - go to admin panel of images http://localhost:8000/admin/api/image/
     - Login with your credentials
     - select *import* button on top right corner
@@ -100,7 +103,7 @@ Need to Login for all end points with the super user credentials
     - confirm the import then your data gets imported if everything is fine with the file.
     - If the file is invalid it will give the errors.
     
-- Option2: via CSV File Link.
+- ##### Option2: Via CSV File Link.
     - go to the POST endpoint http://localhost:8000/api/upload-images/
     - Login with your credentials
     - give *images_file_link* in and hit the POST button.
@@ -108,16 +111,18 @@ Need to Login for all end points with the super user credentials
     - If CSV is valid you will get *success* response.
     - If CSV is invalid you will get *invalid csv* response.
     
+- ##### Sample CSV file format: [test_application_data.csv](test_application_data.csv)
     
-# GET Images Endpoint
+    
+## GET Images Endpoint
 - go to the api http://localhost:8000/api/images/
         ![images-list](demo_screens/images_list.jpg)
 - Login with your credentials
 - Hit the GET button, you will get all images information with pagination. 
 
-# GET Image details Endpoint
+## GET Image Details Endpoint
 - go to the api http://localhost:8000/api/image/<pk>
-        - pk : image instance id
+        - pk : image id
         ![image-detail](demo_screens/image_details.jpg)
 - Login with your credentials
 - Hit the GET button, you will get required image details. 
