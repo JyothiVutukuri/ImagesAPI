@@ -1,6 +1,6 @@
 # Images API
 
-**Elements Assignment**
+This API is used to give images data by using a csv that can be dumped into the DB via Post call or directly uploading csv file from django admin
 
 # Setup 
 
